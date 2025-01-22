@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Riesgo Crediticio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predicción de Riesgo Crediticio</h1>
+        <form action="/predict" method="POST">
+            <label for="loan_amnt">Monto del préstamo:</label>
+            <input type="number" id="loan_amnt" name="loan_amnt" required>
+
+            <label for="term">Plazo (meses):</label>
+            <input type="number" id="term" name="term" required>
+
+            <label for="int_rate">Tasa de interés (%):</label>
+            <input type="number" step="0.01" id="int_rate" name="int_rate" required>
+
+            <label for="grade">Grado del préstamo:</label>
+            <input type="text" id="grade" name="grade" required>
+
+            <label for="home_ownership">Propiedad del hogar:</label>
+            <input type="text" id="home_ownership" name="home_ownership" required>
+
+            <label for="annual_inc">Ingreso anual:</label>
+            <input type="number" id="annual_inc" name="annual_inc" required>
+
+            <label for="verification_status">Estado de verificación:</label>
+            <input type="text" id="verification_status" name="verification_status" required>
+
+            <label for="purpose">Propósito del préstamo:</label>
+            <input type="text" id="purpose" name="purpose" required>
+
+            <label for="dti">Índice de deuda a ingreso:</label>
+            <input type="number" step="0.1" id="dti" name="dti" required>
+
+            <label for="delinq_2yrs">Delitos de 2 años:</label>
+            <input type="number" id="delinq_2yrs" name="delinq_2yrs" required>
+
+            <label for="open_acc">Cuentas abiertas:</label>
+            <input type="number" id="open_acc" name="open_acc" required>
+
+            <label for="revol_util">Utilización de crédito revolvente (%):</label>
+            <input type="number" step="0.1" id="revol_util" name="revol_util" required>
+
+            <button type="submit">Predecir Riesgo</button>
+        </form>
+    </div>
+</body>
+</html>

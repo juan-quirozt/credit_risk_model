@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Predicción</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado de la Predicción</h1>
+        <p>Probabilidad de riesgo: {{ prediction['probabilidad'] | round(2) }}%</p>
+        <p>Clasificación: {{ prediction['clasificacion'] }}</p>
+        <a href="/">Realizar otra predicción</a>
+    </div>
+</body>
+</html>
